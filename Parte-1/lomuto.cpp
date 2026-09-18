@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -25,18 +26,13 @@ int main() {
     for(int i=0; i<n; i++){
         cin >> arr[i];
     }
-
+    
     while (iMedi != n/2){
         iMedi = particion_lomuto(arr,bajo,alto);
-        if(iMedi < n/2) bajo = iMedi;
-        if(iMedi > n/2) alto = iMedi;
+        if(iMedi < n/2) bajo = iMedi + 1;
+        if(iMedi > n/2) alto = iMedi - 1;
     }
     
-
-
-    for(int i=0; i<n; i++){
-        cout << arr[i] << " ";
-    }
-    cout << endl << iMedi;
+    cout << arr[iMedi];
     return 0;
 }
