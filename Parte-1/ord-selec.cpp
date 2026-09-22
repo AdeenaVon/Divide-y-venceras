@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <random>
+#include <algorithm>
 
 using namespace std;
 
@@ -65,16 +67,19 @@ void ordenaMerge(vector<int>& lista, int inicio, int fin) {
     }
 }
 
+// --- EXPERIMENTO N = 500001 ---
 int main() {
-    vector<int> lista = {1001, 1101, 1011, 1110, 1000, 1100, 1010, 1111};
-    int tam = lista.size();
-
-    // Ordenar la lista usando Merge Sort
-    ordenaMerge(lista, 0, tam - 1);
-
-    // Imprimir resultado
-    for (auto i: lista)
-        cout << i << " ";
+    int n = 1000001;
+    for (int rep = 1; rep <= 5; rep++) {
+        vector<int> lista(n);
+        for(int i = 0; i < n; i++) lista[i] = i + 1; 
         
+        random_device rd;
+        mt19937 g(rd());
+        shuffle(lista.begin(), lista.end(), g); 
+        
+        int tam = lista.size();
+        ordenaMerge(lista, 0, tam - 1); 
+    }
     return 0;
 }
