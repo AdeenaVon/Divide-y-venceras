@@ -41,7 +41,8 @@ int select_bfprt(vector<int>& arr, int k){
 }
 
 int main() {
-    int n, mediana;
+    int n;
+    float mediana;
     cin >> n;
 
     vector<int> arr(n);
