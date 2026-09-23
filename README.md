@@ -17,7 +17,7 @@ El proyecto compara distintos métodos para obtener la mediana de un conjunto de
 
 ## Estructura del proyecto
 
-text
+```text
 Divide-y-venceras-main/
 │
 ├── Parte-1/
@@ -37,7 +37,7 @@ Divide-y-venceras-main/
 │       └── imágenes utilizadas por la visualización
 │
 └── README.md
-
+```
 
 ## Requisitos
 
