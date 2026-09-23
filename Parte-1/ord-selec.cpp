@@ -2,6 +2,7 @@
 #include <vector>
 #include <random>
 #include <algorithm>
+#include <chrono> //Solo para medir el tiempo exacto
 
 using namespace std;
 
@@ -75,9 +76,16 @@ int main() {
     for(int i=0; i<n; i++) {
         cin >> arr[i];
     }
+
+    auto inicio = chrono::high_resolution_clock::now();
+
     ordenaMerge(arr, 0, n - 1);
+    int mediana = arr[n/2];
     
-    cout << arr[n/2];
+    auto fin = chrono::high_resolution_clock::now();
+    double tiempo = chrono::duration<double, milli>(fin - inicio).count();
     
+    cout << mediana << " " << tiempo;
+
     return 0;
 }

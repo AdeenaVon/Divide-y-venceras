@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <chrono> //medicion de tiempo solamente
 
 using namespace std;
 
@@ -43,6 +44,8 @@ int main() {
         cin >> arr[i];
     }
 
+    auto inicio = chrono::high_resolution_clock::now();
+
     if(n%2) mediana = quickselect(arr, n / 2);
     else{
         int hi = quickselect(arr, n / 2);
@@ -50,7 +53,11 @@ int main() {
         mediana = (lo + hi) / 2.0;
     }
 
-    cout << mediana;
+    auto fin = chrono::high_resolution_clock::now();
+
+    double tiempo = chrono::duration<double, milli>(fin - inicio).count();
+
+    cout << mediana << " " << tiempo;
 
     return 0;
 }
