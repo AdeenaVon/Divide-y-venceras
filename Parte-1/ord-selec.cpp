@@ -7,6 +7,8 @@
 using namespace std;
 
 // Función para unir las dos mitades
+// Complejidad temporal: O(n), donde n es el tamaño del segmento que se une
+// Complejidad espacial: O(n) por los vectores temporales
 void unir(vector<int>& lista, int inicio, int mitad, int fin) {
     int i, j, k;
     int tamIzq = mitad - inicio + 1; // Tamaño de la mitad izquierda
@@ -54,6 +56,8 @@ void unir(vector<int>& lista, int inicio, int mitad, int fin) {
 }
 
 // Función recursiva que divide el arreglo
+// Complejidad temporal: O(n log n)
+// Complejidad espacial: O(n) por los arreglos auxiliares utilizados durante Merge Sort
 void ordenaMerge(vector<int>& lista, int inicio, int fin) {
     if (inicio < fin) {
         // Calcular el punto medio (se hace así para evitar desbordamiento de memoria)
@@ -80,7 +84,9 @@ int main() {
     auto inicio = chrono::high_resolution_clock::now();
 
     ordenaMerge(arr, 0, n - 1);
-    int mediana = arr[n/2];
+
+    // Después de ordenar, seleccionar el elemento central tiene complejidad O(1)
+    int mediana = arr[n/2]; 
     
     auto fin = chrono::high_resolution_clock::now();
     double tiempo = chrono::duration<double, milli>(fin - inicio).count();

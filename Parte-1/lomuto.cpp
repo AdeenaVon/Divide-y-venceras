@@ -4,6 +4,9 @@
 
 using namespace std;
 
+
+// Complejidad temporal: O(n), recorre una vez el segmento del arreglo
+// Complejidad espacial: O(1)
 int particion_lomuto(vector<int>& arr,int bajo, int alto){
     int i=bajo-1, j=bajo, aux;
     while (j<=alto){
@@ -19,6 +22,9 @@ int particion_lomuto(vector<int>& arr,int bajo, int alto){
     return i;
 }
 
+// Complejidad temporal promedio: O(n)
+// Peor caso: O(n^2), si el pivote produce particiones muy desbalanceadas
+// Complejidad espacial: O(1), sin considerar el arreglo recibido
 int quickselect(vector<int>& arr, int k){
     int bajo = 0;
     int alto = arr.size() - 1;

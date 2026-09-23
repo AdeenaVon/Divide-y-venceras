@@ -6,6 +6,10 @@
 using namespace std;
 
 
+// Complejidad temporal: O(n) en el peor caso
+// El pivote se obtiene mediante mediana de medianas, evitando particiones
+// excesivamente desbalanceadas
+// Complejidad espacial: O(n) por los vectores auxiliares utilizados
 int select_bfprt(vector<int>& arr, int k){
     int n = arr.size();
 
