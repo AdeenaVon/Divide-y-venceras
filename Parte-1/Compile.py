@@ -72,6 +72,7 @@ for archivo in archivos:
 
     print(
         archivo.name,
+        "| Mediana:", medianas[0],
         "| Ordena:", round(tiempos["Ordena"], 3), "ms",
         "| Lomuto:", round(tiempos["Lomuto"], 3), "ms",
         "| Med. Medianas:", round(tiempos["Med. Medianas"], 3), "ms",
